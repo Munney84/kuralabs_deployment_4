@@ -11,7 +11,7 @@ provider "aws" {
 resource "aws_instance" "web_server01" {
   ami = "ami-097a2df4ac947655f"
   instance_type = "t2.micro"
-  key_name = "awsKey.pem"
+  key_name = "awsKey"
   vpc_security_group_ids = [aws_security_group.web_ssh.id]
 
   user_data = "${file("deploy.sh")}"
