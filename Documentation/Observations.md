@@ -45,14 +45,21 @@
 ## 4. Create a Pipeline build in Jenkins
 1.  While logged into Jenkins, create a multibranch pipeline and connect it to your Github repo by adding Github credentials to Branch Sources
 <img width="1120" alt="Screen Shot 2022-10-29 at 8 14 27 AM" src="https://user-images.githubusercontent.com/108026310/198830958-fddffb81-390d-40f9-9fdd-bfbdaf4ade59.png">
-2. Build pipeline to run phases "build" "test" "init" "Plan" "Apply" (Destroy stage added succes through each stage
+2. Build pipeline to run phases "build" "test" "init" "Plan" and "Apply" (Destroy stage added after succes through each stage)
+<img width="1147" alt="Screen Shot 2022-10-29 at 8 35 22 AM" src="https://user-images.githubusercontent.com/108026310/198831885-51089dfa-853e-43ba-a3f2-851007788d40.png">
 
-
-## Additions to the pipeline (Slack Notificiations)
+## 5. Additions to the pipeline (Slack Notificiations)
 1. Add Slack Notification plugin to Jenkins (Navigate to "manage jenkins" and then "Manage plugins" to search for slack plugin
 2. Configure the Jenkins integration using: https://my.slack.com/services/new/jenkins-ci choose the channel of choice to receive notifications
 3. Save the "Integration Token Credential ID" as it is needed to when creating credentials 
 4. Configure system to add Slack workspace "kura-labs" and add secret text credential using the "Integration Token Credential ID" from the above step. User ID can be found in the slack profile (copy starting with "U" 
+
+##6. Create VPC with Terraform
+1. Create Terraform directory and within directory create a "main.tf" file and "terraform.tfvars" file.
+2. Inside of main.tf should be the following: 
+<img width="496" alt="Screen Shot 2022-10-29 at 8 46 28 AM" src="https://user-images.githubusercontent.com/108026310/198832274-f455b4a3-7094-4428-9d3b-19bf033a0b0a.png">
+<img width="557" alt="Screen Shot 2022-10-29 at 8 47 47 AM" src="https://user-images.githubusercontent.com/108026310/198832326-98d049bd-2e84-4b26-b887-d1d98cf4282f.png">
+<img width="475" alt="Screen Shot 2022-10-29 at 8 48 37 AM" src="https://user-images.githubusercontent.com/108026310/198832362-7ddfecdc-ae6c-493d-963e-5a8075a6a898.png">
 
 ## Issues
 1. ./terraform did not work to run and install Terraform even after modifying permissions
