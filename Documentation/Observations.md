@@ -45,6 +45,7 @@
 ## 4. Create a Pipeline build in Jenkins
 1.  While logged into Jenkins, create a multibranch pipeline and connect it to your Github repo by adding Github credentials to Branch Sources
 <img width="1120" alt="Screen Shot 2022-10-29 at 8 14 27 AM" src="https://user-images.githubusercontent.com/108026310/198830958-fddffb81-390d-40f9-9fdd-bfbdaf4ade59.png">
+2. Build pipeline to run phases "build" "test" "init" "Plan" "Apply" (Destroy stage added succes through each stage
 
 
 ## Additions to the pipeline (Slack Notificiations)
@@ -54,11 +55,11 @@
 4. Configure system to add Slack workspace "kura-labs" and add secret text credential using the "Integration Token Credential ID" from the above step. User ID can be found in the slack profile (copy starting with "U" 
 
 ## Issues
-1. ./terraform did not work to install even after odifying permissions
+1. ./terraform did not work to run and install Terraform even after modifying permissions
 2. python3-venv needed
 3. Needed to edit the Jenkinsfile for AWS Access Key information (updated AMI and key name)
 4. Added AWS access key and ID
 5. needed to remove ".pem" from key name
 6. failed in the "Init" stage due to the following error:
 <img width="957" alt="Screen Shot 2022-10-22 at 3 11 51 PM" src="https://user-images.githubusercontent.com/108026310/198831082-e843d92c-beea-438b-8265-c4fdfacfbb65.png">
-This was due to inputing the Credentials incorrectly in the #3 Configure credentials on Jenkins, step 6 and 7
+This was due to inputing the Credentials incorrectly in the #3 phase "Configure credentials on Jenkins", step 6 and 7
