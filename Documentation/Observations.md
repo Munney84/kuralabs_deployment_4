@@ -54,7 +54,7 @@
 3. Save the "Integration Token Credential ID" as it is needed to when creating credentials 
 4. Configure system to add Slack workspace "kura-labs" and add secret text credential using the "Integration Token Credential ID" from the above step. User ID can be found in the slack profile (copy starting with "U" 
 
-##6. Create VPC with Terraform
+## 6. Create VPC with Terraform
 1. Create Terraform directory and within directory create a "main.tf" file and "terraform.tfvars" file.
 2. Inside of main.tf should be the following: 
 <img width="496" alt="Screen Shot 2022-10-29 at 8 46 28 AM" src="https://user-images.githubusercontent.com/108026310/198832274-f455b4a3-7094-4428-9d3b-19bf033a0b0a.png">
